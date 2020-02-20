@@ -29,6 +29,7 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency "dry-cli", "~> 0.4.0"
   spec.add_dependency "tty-prompt", "~> 0.20.0"
+  spec.add_dependency "tty-markdown", "~> 0.6.0"
 
   spec.add_development_dependency "bundler", "~> 2.0"
   spec.add_development_dependency "minitest", "~> 5.0"
