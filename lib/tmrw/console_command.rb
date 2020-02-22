@@ -1,5 +1,5 @@
-require 'readline'
-require 'tty-markdown'
+require "readline"
+require "tty-markdown"
 
 module Tmrw
   class ConsoleCommand < Dry::CLI::Command
@@ -15,8 +15,7 @@ module Tmrw
         line = Readline.readline(prompt, true)
         evaluate(line)
       end
-
-    rescue Interrupt => e
+    rescue Interrupt
       print "\nBye. Exiting console\n"
     end
 
@@ -26,14 +25,14 @@ module Tmrw
       case command.strip
       when "help"
         doc = <<~MARKDOWN
-        __Commands:__
+          __Commands:__
 
-        `namespaces` - returns list of avaliable namespaces
-        `switch` - switch between namespaces
-        `publish` - build image and push it to registry
-        `list` - list of availiable containers in namespace
+          `namespaces` - returns list of avaliable namespaces
+          `switch` - switch between namespaces
+          `publish` - build image and push it to registry
+          `list` - list of availiable containers in namespace
 
-        To learn more about a command type `help [command]`
+          To learn more about a command type `help [command]`
         MARKDOWN
 
         puts TTY::Markdown.parse(doc)
@@ -41,8 +40,6 @@ module Tmrw
         raise Interrupt
       when "namespaces"
         Tmrw::NamespacesCommand.new(command_name: "namespaces").call
-      when "switch"
-
       else
         puts "Unkown command"
         puts "Enter help to see list of command"

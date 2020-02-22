@@ -7,21 +7,18 @@ module Tmrw
     argument :name, desc: "Application name", required: true
 
     def call(name:, **)
-      image = "registry.tomorrowhq.com/tmrw/#{name}:latest"
+      tag = "registry.tomorrowhq.com/#{name}:latest"
+      image = DockerImage.new(tag: tag)
 
-      print "Building docker image:\n"
-      if !system("docker build -t #{image} .")
-        print red("Failed to build docker image\n")
-        return
-      end
+      puts blue("Building docker image:")
+      image.build!
 
-      print "Pushing image to registry:\n"
-      if !system("docker push #{image}")
-        print red("Failed to push image to registry\n")
-        return
-      end
+      puts blue("Pushing image to registry:")
+      image.push!
 
       puts green("Completed!")
+    rescue StandardError => e
+      puts red(e.message)
     end
   end
 end

@@ -2,6 +2,7 @@ require "dry/cli"
 require "tty-prompt"
 
 require "tmrw/version"
+require "tmrw/docker_image"
 require "tmrw/color"
 require "tmrw/namespaces_command"
 require "tmrw/switch_command"
