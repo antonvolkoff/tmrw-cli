@@ -92,6 +92,7 @@ Metrics/BlockLength:
   ExcludedMethods: []
   Exclude:
     - "spec/**/*"
+    - "*.gemspec"
 
 Metrics/CyclomaticComplexity:
   Description: >-

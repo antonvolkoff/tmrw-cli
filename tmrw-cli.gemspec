@@ -2,17 +2,6 @@ lib = File.expand_path("lib", __dir__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require "tmrw/version"
 
-def dependencies(spec)
-  spec.add_dependency "dry-cli", "~> 0.4.0"
-  spec.add_dependency "tty-markdown", "~> 0.6.0"
-  spec.add_dependency "tty-prompt", "~> 0.20.0"
-
-  spec.add_development_dependency "bundler", "~> 2.0"
-  spec.add_development_dependency "rake", "~> 10.0"
-  spec.add_development_dependency "rspec", "~> 3.0"
-  spec.add_development_dependency "rubocop", "~> 0.80.0"
-end
-
 Gem::Specification.new do |spec|
   spec.name          = "tmrw-cli"
   spec.version       = Tmrw::VERSION
@@ -38,5 +27,12 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
-  dependencies(spec)
+  spec.add_dependency "dry-cli", "~> 0.4.0"
+  spec.add_dependency "tty-markdown", "~> 0.6.0"
+  spec.add_dependency "tty-prompt", "~> 0.20.0"
+
+  spec.add_development_dependency "bundler", "~> 2.0"
+  spec.add_development_dependency "rake", "~> 10.0"
+  spec.add_development_dependency "rspec", "~> 3.0"
+  spec.add_development_dependency "rubocop", "~> 0.80.0"
 end
