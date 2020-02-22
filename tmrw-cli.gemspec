@@ -19,8 +19,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Anton Volkov"]
   spec.email         = ["choixer@gmail.com"]
 
-  spec.summary       = ""
-  spec.description   = ""
+  spec.summary       = "TMRW CLI tool"
+  spec.description   = "TMRW CLI tool that helps you to manage your projects"
   spec.homepage      = "https://www.tomorrowhq.com/cli"
 
   # spec.metadata['allowed_push_host'] = "TODO: Set to 'http://mygemserver.com'"
