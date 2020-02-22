@@ -11,7 +11,7 @@ module Tmrw
       raise "Failed to build docker image" unless ok
     end
 
-    def push
+    def push!
       ok = system("docker push #{tag}")
       raise "Failed to push image to registry" unless ok
     end
