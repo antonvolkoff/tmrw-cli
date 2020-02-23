@@ -13,5 +13,9 @@ module Tmrw
     def blue(text)
       Hanami::Utils::ShellColor.call(text, color: :blue)
     end
+
+    def yellow(text)
+      Hanami::Utils::ShellColor.call(text, color: :yellow)
+    end
   end
 end

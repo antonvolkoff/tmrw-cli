@@ -1,5 +1,4 @@
 require "readline"
-require "tty-markdown"
 
 module Tmrw
   class ConsoleCommand < Dry::CLI::Command

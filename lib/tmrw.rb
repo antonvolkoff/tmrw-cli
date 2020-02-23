@@ -1,9 +1,11 @@
+require "open3"
 require "dry/cli"
-require "tty-prompt"
+require "tty-markdown"
 
 require "tmrw/version"
 require "tmrw/docker_image"
 require "tmrw/color"
+require "tmrw/prompt"
 require "tmrw/namespaces_command"
 require "tmrw/demo_command"
 require "tmrw/switch_command"
