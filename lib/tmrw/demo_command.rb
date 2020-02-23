@@ -1,16 +1,22 @@
 module Tmrw
   class DemoCommand < Dry::CLI::Command
+    include Color
+
     desc "Step by step guide to Tomorrow platform"
 
     def call(*)
-      context = { name: "demo/test", url: "http://demo-test.tomorrowhq.com" }
+      context = { name: "demo/test" }
 
       intro(context)
       select_project_type(context)
       add_dockerfile(context)
       add_content(context)
       publish(context)
-      open_website(context)
+
+      print "\n"
+      puts "That's it. Done. You project is deployed and avaliable online."
+      puts "Now execute command bellow to open it in your browser:"
+      puts blue("tmrw open demo/test")
     end
 
     private
@@ -52,10 +58,6 @@ module Tmrw
 
     def publish(context)
       PublishCommand.new(command_name: "tmrw").call(name: context[:name])
-    end
-
-    def open_website(context)
-      system("open #{context[:url]}")
     end
   end
 end
