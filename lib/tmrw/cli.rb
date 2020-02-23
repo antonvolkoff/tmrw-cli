@@ -3,6 +3,7 @@ module Tmrw
     extend Dry::CLI::Registry
 
     register "publish", PublishCommand
+    register "open", OpenCommand
 
     if ENV["ALPHA"]
       register "namespaces", NamespacesCommand
