@@ -6,6 +6,7 @@ module Tmrw
     register "open", OpenCommand
 
     if ENV["ALPHA"]
+      register "demo", DemoCommand
       register "namespaces", NamespacesCommand
       register "switch", SwitchCommand
       register "containers", ContainersCommand
